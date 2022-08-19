@@ -1,5 +1,5 @@
-: Skrypt wklajmy w putty po po³¹czeniu z drukark¹ (115200,8,1,none)
-: W drukarce wczesniej nalezy w³¹czyc virtualny port COM
+: Skrypt wklajmy w putty po poÅ‚Ä…czeniu z drukarkÄ… (115200,8,1,none)
+: W drukarce wczesniej nalezy wÅ‚Ä…czyc virtualny port COM
 :
 
 IMMEDIATE OFF
@@ -23,11 +23,11 @@ IMMEDIATE OFF
 
 200 FONT "Univers",7
 210 PRPOS 10,160
-220 PRTXT "Dyskont TANIA ODZIE¯"
+220 PRTXT "Dyskont TANIA ODZIEÅ»"
 230 PRPOS 10,60
 240 FONT "Univers Bold",30,0,75
 250 PRTXT C$
-260 PRTXT "z³"
+260 PRTXT "zÅ‚"
 270 PRPOS 10,35
 280 FONT "Univers",7
 290 FORMAT DATE$ "YYYY-MM-DD" : 'sets date format
