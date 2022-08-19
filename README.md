@@ -21,6 +21,8 @@ Użytkownik może:
 
 https://www.youtube.com/watch?v=xSQjKm4JLUc
 
+<iframe width="500" height="300" src="https://www.youtube.com/embed/xSQjKm4JLUc" frameborder="0" allowfullscreen></iframe>
+
 ## Przygotowanie drukarki
 
 Przy pierwszy uruchomieniu:
