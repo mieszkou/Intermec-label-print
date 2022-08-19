@@ -17,6 +17,10 @@ Użytkownik może:
 - wpidać <kbd>/</kbd> i <kbd>Enter</kbd> - zamknięcie aplikacji
 - kolejne naciśnięcia klawisza <kbd>Enter</kbd> po wydrukowaniu etykiety powodują powtórzenie wydruku
 
+## Przentacja video
+
+[![IMAGE ALT TEXT](https://i9.ytimg.com/vi/xSQjKm4JLUc/mq1.jpg?sqp=CIjf_ZcG&rs=AOn4CLCKdGRGSIOU2o4ZYQXCsu0qBMdAhg)](https://youtube.com/shorts/xSQjKm4JLUc?feature=share)
+
 ## Przygotowanie drukarki
 
 Przy pierwszy uruchomieniu:
