@@ -1,4 +1,4 @@
-# Intermec PC23d
+# Standalone Intermec label print
 
 Aplikacja do wgrania na drukarkę etykiet Intermec. Testowana na modelu PC23d, ale powinna działać także na innych.
 
@@ -19,9 +19,7 @@ Użytkownik może:
 
 ## Prezentacja video
 
-https://www.youtube.com/watch?v=xSQjKm4JLUc
-
-<iframe width="500" height="300" src="https://www.youtube.com/embed/xSQjKm4JLUc" frameborder="0" allowfullscreen></iframe>
+[![Standalone Intermec label print](https://i3.ytimg.com/vi/xSQjKm4JLUc/hqdefault.jpg)](https://www.youtube.com/watch?v=xSQjKm4JLUc "Standalone Intermec label print")
 
 ## Przygotowanie drukarki
 
@@ -54,6 +52,8 @@ Dalsza konfiguracja:
       - Power Up Action - ustaw `No Action`
 
 Następnie restartujemy drukarkę.
+
+## Instalacja
 
 Po ponownym uruchomieniu w systemie powinien być widoczny port COM.
 Łączym się z drukarką np. przez `putty` (prędkość 115200).
