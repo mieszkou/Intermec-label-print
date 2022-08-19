@@ -1,5 +1,22 @@
 # Intermec PC23d
 
+Aplikacja do wgrania na drukarkę etykiet Intermec. Testowana na modelu PC23d, ale powinna działać także na innych.
+
+Pozwala na samodzielną pracę drukarki, bez komputera. Do drukarki musi być podłączona klawiatura np. tylko numeryczna.
+
+## Użycie
+
+Drukarka po włączeniu będzie automatycznie uruchamiać aplikację.
+
+Interfejs prezentuje pytanie o cenę która ma być drukowana.
+
+Użytkownik może:
+
+- wpisać cenę np.: `15` - po naciśnięciu klawisza <kbd>Enter</kbd> wydrukuje się etykieta z podaną ceną
+- wpisać <ilość>*<cena> np.: `5*15` - po naciśnięciu klawisza <kbd>Enter</kbd> wydrukuje się 5 szt. etykiet z podaną ceną
+- wpidać <kbd>/</kbd> i <kbd>Enter</kbd> - zamknięcie aplikacji
+- kolejne naciśnięcia klawisza <kbd>Enter</kbd> po wydrukowaniu etykiety powodują powtórzenie wydruku
+
 ## Przygotowanie drukarki
 
 Przy pierwszy uruchomieniu:
