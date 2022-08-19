@@ -1,0 +1,376 @@
+10 PRPOS 200,200
+20 DIR 3
+30 ALIGN 5
+40 PRIMAGE "GLOBE.1"
+50 PRINTFEED
+RUN
+
+
+
+10 INPUT "Enter first value ", A%
+20 INPUT "Enter second value ", B%
+30 C$="1:st value > 2:nd value"
+40 D$="1:st value <= 2:nd value"
+50 IF A%>B% THEN PRINT C$ ELSE PRINT D$
+60 END
+
+
+
+20 WHILE B%<>89
+30 INPUT "Want to exit? Press Y=Yes or N=No ",A$
+40 B%=ASC(A$)
+
+60 PRINT "The answer is Yes"
+70 PRINT "You will exit the program"
+80 END
+
+
+110  B%=0
+120  WHILE B%<>89
+130 NASC 8
+140 MAP 64,187
+150 SETSTDIO 9,0
+160 INPUT "Cena: ";A$
+
+200 FONT "Univers",7
+210 PRPOS 100,60
+220 PRTXT "Dyskont TANIA ODZIE¯: "
+
+230 PRPOS 100,160
+240 FONT "Univers",30
+260 PRTXT A$
+270 PRPOS 100,100
+285 FONT "Univers",7
+290 FORMAT DATE$ "YYYY-MM-DD" : 'sets date format
+380 FORMAT TIME$ "HH:MM:SS" : 'sets date format
+390 PRTXT "Data: "
+400 PRTXT DATE$("F") : 'returns formatted date
+410 PRTXT TIME$("F") : 'returns formatted date
+510 B%=ASC(A$)
+520 IF B%<>89 THEN PRINTFEED
+550 WEND
+565 SETSTDIO 6,6
+
+
+20 FORMAT DATE$ "YYYY-MM-DD" : 'sets date format
+30 PRINT DATE$ : 'returns unformatted date
+40 PRINT DATE$("F") : 'returns formatted date
+
+10 PRINT "Character", "ASCII value"
+20 OPEN "console:" FOR INPUT AS 1
+30 A$=INPUT$(1,1)
+40 B%=ASC(A$)
+50 PRINT A$, B%
+60 GOTO 30
+70 CLOSE 1
+RUN
+
+
+
+10 PRINT "Character", "ASCII value"
+20 OPEN "usb1:" FOR INPUT AS 1
+30 A$=INPUT$(1,1)
+40 B%=ASC(A$)
+50 PRINT A$, B%
+60 GOTO 30
+70 CLOSE 1
+
+
+
+10 PRPOS 100,500
+20 PRLINE 100,100
+30 FONT "Univers"
+40 PRPOS 100,300
+50 MAG 4,4
+60 PRTXT "SAMPLE"
+70 ON KEY (10) GOSUB 1000
+80 ON KEY (11) GOSUB 2000
+90 KEY (10) ON : KEY (11) ON
+100 GOTO 70
+110 PRINTFEED
+120 END
+1000 SETUP "MEDIA,CONTRAST,-10%"
+1010 PRPOS 100,100 : PRTXT "Weak Print"
+1020 RETURN 110
+2000 SETUP "MEDIA,CONTRAST,10%"
+2010 PRPOS 100,100 : PRTXT "Dark Print"
+2030 RETURN 110
+RUN
+
+
+
+
+
+INPUT OFF
+FORMAT INPUT "#","@","&"	
+INPUT ON
+LAYOUT INPUT "tmp:LABEL1"
+FT "Univers"
+PP 100,250
+PT VAR1$
+PP 100,200
+PT VAR2$
+LAYOUT END
+LAYOUT RUN "tmp:LABEL1"
+PF
+COPY "TMP:LABEL1.LAY","C:LABEL1.LAY"
+INPUT OFF
+
+
+
+' Converts Fingerprint scripts to DataMatrix bar codes
+
+INPUT OFF
+
+IMMEDIATE ON
+
+NEW
+
+10 CLOSE
+
+20 SYSVAR(43)=1
+
+30 PRINT "" : 'empty line
+
+40 INPUT"Enter file to convert (case sensitive): ", QFILE$
+
+50 QBARC$="DATAMATRIX"
+
+60 QONFIRST%=1 : ' 1= On first line, 0=not
+
+70 QFIRSTLN$=""
+
+80 OPEN QFILE$ FOR INPUT AS 2
+
+90 QFILEDATA$=INPUT$(LOF(2),2)
+
+100 QBARCDATA$=CHR$(13)
+
+110 QFILELENGTH%=LEN(QFILEDATA$)
+
+120 FOR QPOS%=1 TO QFILELENGTH%
+
+130 QFILECHAR$=MID$(QFILEDATA$,QPOS%,1)
+
+140 IF QONFIRST%=1 THEN 
+
+150 QFIRSTLN$=QFIRSTLN$+QFILECHAR$
+
+160 END IF
+
+170 IF QFILECHAR$=CHR$(10) THEN 
+
+180 QONFIRST%=0
+
+190 QBARCDATA$=QBARCDATA$+CHR$(13)
+
+200 ELSE
+
+210 QBARCDATA$=QBARCDATA$+QFILECHAR$
+
+220 END IF
+
+230 NEXT
+
+240 CLIP ON
+
+250 PRPOS 100,50
+
+260 FONT "Univers",10
+
+270 PRTXT QFIRSTLN$
+
+280 BARMAG 3
+
+290 PRPOS 100,100
+
+300 BARSET QBARC$
+
+310 PRBAR QBARCDATA$
+
+320 PRINTFEED
+
+330 CLOSE 2
+
+340 PRINT "" : 'empty line
+
+350 INPUT"Convert another file (Y/N)?: ", QGETMORE$
+
+360 IF QGETMORE$="y" OR QGETMORE$="Y" THEN GOTO 30
+
+370 END
+
+
+SETSTDIO 9,0
+
+
+A$=COMBUF$(9)
+PRINT A$
+
+
+
+10 COM ERROR 1 ON
+20 A$="number of char. received"
+30 B$="char. received"
+40 C$="string received"
+50 D$="error"
+60 COMSET 1,"A",CHR$(90),"#","BREAK",20
+70 ON COMSET 1 GOSUB 1000
+80 COMSET 1 ON
+90 IF QDATA$="" THEN GOTO 90
+100 END
+1000 QDATA$=COMBUF$(9)
+1010 IF COMSTAT(1) AND 2 THEN PRINT A$
+1020 IF COMSTAT(1) AND 4 THEN PRINT B$
+1030 IF COMSTAT(1) AND 8 THEN PRINT C$
+1040 IF COMSTAT(1) AND 32 THEN PRINT D$
+1050 PRINT QDATA$
+1060 RETURN
+
+
+
+A$=COMBUF$(9)
+PRINT A$
+
+
+
+1 REM Exit program with #STOP&
+12 COMSET 9,"#","&","ZYX","=",50
+20 ON COMSET 9 GOSUB 2000
+30 COMSET 9 ON
+40 IF A$ <> "STOP" THEN GOTO 40
+50 COMSET 9 OFF
+1000 END
+2000 A$= COMBUF$(1)
+2010 PRINT A$
+2020 COMSET 9 ON
+2030 RETURN
+
+IMMEDIATE STDIO
+
+SETSTDIO stdin,stdout
+9 - klawiatura usb
+0 - wyœwietlacz
+6 - consola rs na usb
+
+SETSTDIO 9,0
+
+SETSTDIO 6,6
+
+SETSTDIO 6,9
+
+SETSTDIO 6,0
+
+
+
+
+
+
+#
+#
+# Testy druku
+
+
+100  A$="10"
+110  B%=0
+160 INPUT "Cena: ";A$
+170 IF A$<>"" THEN C$=A$
+
+200 FONT "Univers",7
+210 PRPOS 10,160
+220 PRTXT "Dyskont TANIA ODZIE¯"
+230 PRPOS 10,60
+240 FONT "Univers Bold",30,0,75
+250 PRTXT C$
+260 PRTXT "z³"
+270 PRPOS 10,35
+280 FONT "Univers",7
+290 FORMAT DATE$ "YYYY-MM-DD" : 'sets date format
+300 FORMAT TIME$ "HH:MM:SS" : 'sets date format
+310 PRTXT "Data: "
+320 PRTXT DATE$("F") : 'returns formatted date
+330 PRTXT " "
+340 PRTXT TIME$("F") : 'returns formatted date
+350 PRPOS 10,10
+360 FONT "Univers",7
+370 PRTXT "Stanowisko 1"
+400 PF
+
+
+
+
+
+#
+#
+# Gotowy
+
+IMMEDIATE OFF
+
+100 A$="10"
+110 B%=0
+120 SETSTDIO 9,0
+130 WHILE B%<>47
+135 I%=0
+140 NASC 8
+160 INPUT "Cena: ";A$
+170 IF A$<>"" THEN C$=A$
+
+175 T$="ARRAY$"
+180 DIM ARRAY$(4)
+190 I%=SPLIT(A$,T$,42)
+193 IF I%=2 THEN 
+194 L%=VAL(ARRAY$(0))
+195 C$=ARRAY$(1)
+196 ELSE L%=1
+
+200 FONT "Univers",7
+210 PRPOS 10,160
+220 PRTXT "Dyskont TANIA ODZIE¯"
+230 PRPOS 10,60
+240 FONT "Univers Bold",30,0,75
+250 PRTXT C$
+260 PRTXT "z³"
+270 PRPOS 10,35
+280 FONT "Univers",7
+290 FORMAT DATE$ "YYYY-MM-DD" : 'sets date format
+300 FORMAT TIME$ "HH:MM:SS" : 'sets date format
+310 PRTXT "Data: "
+320 PRTXT DATE$("F") : 'returns formatted date
+330 PRTXT " "
+340 PRTXT TIME$("F") : 'returns formatted date
+350 PRPOS 10,10
+360 FONT "Univers",7
+370 PRTXT "Stanowisko 1"
+
+510 B%=ASC(A$)
+520 IF B%<>47 THEN PRINTFEED L%
+550 WEND
+600 SETSTDIO 100
+IMMEDIATE ON
+SAVE "tmp:ETYKIETA.PRG",L
+
+SYSVAR(43)=1
+COPY "/tmp/ETYKIETA.PRG","/c/scripts/ETYKIETA.PRG"
+COPY "/tmp/ETYKIETA.PRG","/c/ETYKIETA.PRG"
+OPEN "AUTOEXEC.BAT" FOR OUTPUT AS 1
+PRINT#1,"RUN";CHR$(34);"ETYKIETA.PRG";CHR$(34)
+CLOSE1
+
+
+## Czyszczenie pliku autostartu
+
+OPEN "AUTOEXEC.BAT" FOR OUTPUT AS 1
+PRINT#1,""
+CLOSE1
+
+
+
+
+
+
+
+
+
+
+
+
