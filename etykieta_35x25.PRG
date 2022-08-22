@@ -1,7 +1,8 @@
-: Skrypt wklajmy w putty po połączeniu z drukarką (115200,8,1,none)
-: W drukarce wczesniej nalezy włączyc virtualny port COM
-:
+REM : Skrypt wklajmy w putty po połączeniu z drukarką (115200,8,1,none)
+REM : W drukarce wczesniej nalezy włączyc virtualny port COM
+REM :
 
+DELETE1-100000
 IMMEDIATE OFF
 
 100 A$="10"
@@ -11,7 +12,7 @@ IMMEDIATE OFF
 130 WHILE B%<>47
 135 I%=0
 140 NASC 8
-160 INPUT "Cena: ";A$
+160 INPUT "Cena: ",A$
 170 IF A$<>"" THEN C$=A$
 
 175 T$="ARRAY$"
@@ -31,12 +32,12 @@ IMMEDIATE OFF
 260 PRTXT "zł"
 270 PRPOS 10,35
 280 FONT "Univers",7
-290 FORMAT DATE$ "YYYY-MM-DD" : 'sets date format
-300 FORMAT TIME$ "HH:MM:SS" : 'sets date format
+290 FORMAT DATE$ "YYYY-MM-DD" 
+300 FORMAT TIME$ "HH:MM:SS" 
 310 PRTXT "Data: "
-320 PRTXT DATE$("F") : 'returns formatted date
+320 PRTXT DATE$("F") 
 330 PRTXT " "
-340 PRTXT TIME$("F") : 'returns formatted date
+340 PRTXT TIME$("F") 
 350 PRPOS 10,10
 360 FONT "Univers",7
 370 PRTXT "Stanowisko 1"
@@ -44,6 +45,7 @@ IMMEDIATE OFF
 510 B%=ASC(A$)
 520 IF B%<>47 THEN PRINTFEED L%
 550 WEND
+590 LTS& OFF
 600 SETSTDIO 100
 IMMEDIATE ON
 SAVE "tmp:ETYKIETA.PRG",L
@@ -57,16 +59,20 @@ CLOSE1
 
 REBOOT
 
+REM :## Czyszczenie pliku autostartu
+REM :OPEN "AUTOEXEC.BAT" FOR OUTPUT AS 1
+REM :PRINT#1,""
+REM :CLOSE1
 
 
+SETUP WRITE "set.txt"
 
-:## Czyszczenie pliku autostartu
-:OPEN "AUTOEXEC.BAT" FOR OUTPUT AS 1
-:PRINT#1,""
-:CLOSE1
-
-
-
+10 OPEN "set.txt" FOR INPUT AS #2
+20 WHILE NOT EOF(2)
+30 INPUT#2,qA$
+40 PRINT qA$
+50 WEND
+60 CLOSE #2
 
 
 

@@ -12,8 +12,8 @@ Interfejs prezentuje pytanie o cenę która ma być drukowana.
 
 Użytkownik może:
 
-- wpisać cenę np.: `15` - po naciśnięciu klawisza <kbd>Enter</kbd> wydrukuje się etykieta z podaną ceną
-- wpisać <ilość>*<cena> np.: `5*15` - po naciśnięciu klawisza <kbd>Enter</kbd> wydrukuje się 5 szt. etykiet z podaną ceną
+- wpisać cenę np.: `15` - po naciśnięciu klawisza <kbd>Enter </kbd> wydrukuje się etykieta z podaną ceną
+- wpisać <ilość>*`<cena>` np.: `5*15`- po naciśnięciu klawisza<kbd>Enter </kbd> wydrukuje się 5 szt. etykiet z podaną ceną
 - wpidać <kbd>/</kbd> i <kbd>Enter</kbd> - zamknięcie aplikacji
 - kolejne naciśnięcia klawisza <kbd>Enter</kbd> po wydrukowaniu etykiety powodują powtórzenie wydruku
 
@@ -26,17 +26,21 @@ Użytkownik może:
 Przy pierwszy uruchomieniu:
 
 - Wybieramy język `English`
-- Command Language `Fingerprint`
-- Run other wizards - `NO`
+- Command Language `Fingerprint - YES`
+- Run other wizards - `YES`
+- Calibration
+  - Media
+  - Label Taken Sensor
+  - Date&Time
+    - UTC +1
+    - Time zone: `Berlin`
+    - DTS Adjust: `Enable`
 
 Dalsza konfiguracja:
 
 - Settings
   - System Settings
     - General
-      - (...)
-      - Time - ustaw czas
-      - Date - ustaw datę
       - (...)
       - Unit of Measure - ustaw jednostkę na `mm`
     - Manage I/O
@@ -45,7 +49,11 @@ Dalsza konfiguracja:
     - Media
       - (...)
       - Media Width - ustaw szerokość `35mm`
-      - Media Length - ustaw długość `25.25` - domyślna wartość jest ok
+      - Media Length - ustaw długość `25.50` - domyślna wartość jest ok
+      - (...)
+      - Print Mode - `Tear Off`
+      - (...)
+      - Label Rest Adjust (mm) - `3`
       - (...)
       - Media Calibration Mode - ustaw `Fast` (tu nie jestem do końca pewien jak to działa)
       - (...)
