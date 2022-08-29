@@ -65,20 +65,6 @@ REM :PRINT#1,""
 REM :CLOSE1
 
 
-SETUP WRITE "set.txt"
-
-10 OPEN "set.txt" FOR INPUT AS #2
-20 WHILE NOT EOF(2)
-30 INPUT#2,qA$
-40 PRINT qA$
-50 WEND
-60 CLOSE #2
-
-
-
-
-
-
 
 
 

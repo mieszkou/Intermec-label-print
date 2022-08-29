@@ -34,7 +34,7 @@ RUN
 
 200 FONT "Univers",7
 210 PRPOS 100,60
-220 PRTXT "Dyskont TANIA ODZIE¯: "
+220 PRTXT "Dyskont TANIA ODZIEï¿½: "
 
 230 PRPOS 100,160
 240 FONT "Univers",30
@@ -250,7 +250,7 @@ IMMEDIATE STDIO
 
 SETSTDIO stdin,stdout
 9 - klawiatura usb
-0 - wyœwietlacz
+0 - wyï¿½wietlacz
 6 - consola rs na usb
 
 SETSTDIO 9,0
@@ -278,11 +278,11 @@ SETSTDIO 6,0
 
 200 FONT "Univers",7
 210 PRPOS 10,160
-220 PRTXT "Dyskont TANIA ODZIE¯"
+220 PRTXT "Dyskont TANIA ODZIEï¿½"
 230 PRPOS 10,60
 240 FONT "Univers Bold",30,0,75
 250 PRTXT C$
-260 PRTXT "z³"
+260 PRTXT "zï¿½"
 270 PRPOS 10,35
 280 FONT "Univers",7
 290 FORMAT DATE$ "YYYY-MM-DD" : 'sets date format
@@ -325,11 +325,11 @@ IMMEDIATE OFF
 
 200 FONT "Univers",7
 210 PRPOS 10,160
-220 PRTXT "Dyskont TANIA ODZIE¯"
+220 PRTXT "Dyskont TANIA ODZIEï¿½"
 230 PRPOS 10,60
 240 FONT "Univers Bold",30,0,75
 250 PRTXT C$
-260 PRTXT "z³"
+260 PRTXT "zï¿½"
 270 PRPOS 10,35
 280 FONT "Univers",7
 290 FORMAT DATE$ "YYYY-MM-DD" : 'sets date format
@@ -368,6 +368,38 @@ CLOSE1
 
 
 
+
+
+
+
+### Odczyt pliku
+
+
+SETUP WRITE "set.txt"
+
+10 OPEN "set.txt" FOR INPUT AS #2
+20 WHILE NOT EOF(2)
+30 INPUT#2,qA$
+40 PRINT qA$
+50 WEND
+60 CLOSE #2
+
+
+10 OPEN "set.txt" FOR INPUT AS #2
+20 WHILE NOT EOF(2)
+30 INPUT#2,qA$
+40 PRINT qA$
+50 WEND
+60 CLOSE #2
+
+
+
+10 OPEN "console:" FOR OUTPUT AS #1
+20 PRINT#1, CHR$(155) + CHR$(144)
+
+
+10 OPEN "console:" FOR OUTPUT AS #1
+20 PRINT#1, CHR$(144)
 
 
 
