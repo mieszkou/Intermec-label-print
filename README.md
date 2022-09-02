@@ -68,3 +68,26 @@ Po ponownym uruchomieniu w systemie powinien być widoczny port COM.
 
 W oknie puuty wklejamy zawartość pliku [etykieta_35x25.PRG](etykieta_35x25.PRG).
 Jeśli wszystko poszło ok drukark zrestartuje się i po restarcie powinna wczytać aplikację.
+
+## Konfiguracja vscode
+
+```
+"InsertLineNumber.formats": [
+
+    {
+      "align": "right",
+      "width": "alignToLast"
+    },
+    {
+      "width": "alignToLast"
+    },
+    {
+      "start": "current",
+      "align": "right",
+      "padding": "zero",
+      "width": 3,
+      "prefix": "",
+      "suffix": " "
+    }
+  ]
+```
