@@ -14,7 +14,6 @@ Użytkownik może:
 
 - wpisać cenę np.: `15` - po naciśnięciu klawisza <kbd>Enter </kbd> wydrukuje się etykieta z podaną ceną
 - wpisać <ilość>*`<cena>` np.: `5*15`- po naciśnięciu klawisza<kbd>Enter </kbd> wydrukuje się 5 szt. etykiet z podaną ceną
-- wpidać <kbd>/</kbd> i <kbd>Enter</kbd> - zamknięcie aplikacji
 - kolejne naciśnięcia klawisza <kbd>Enter</kbd> po wydrukowaniu etykiety powodują powtórzenie wydruku
 
 ## Prezentacja video
@@ -66,8 +65,19 @@ Następnie restartujemy drukarkę.
 Po ponownym uruchomieniu w systemie powinien być widoczny port COM.
 Łączym się z drukarką np. przez `putty` (prędkość 115200).
 
-W oknie puuty wklejamy zawartość pliku [etykieta_35x25.PRG](etykieta_35x25.PRG).
+W oknie putty wklejamy zawartość pliku [etykieta_35x25.PRG](etykieta_35x25.PRG).
 Jeśli wszystko poszło ok drukark zrestartuje się i po restarcie powinna wczytać aplikację.
+
+Po wgraniu etykiety dodajmy ją jeszcze do menu.
+
+Wychodzimy z aplikacji 🔙 a następnie:
+
+- Tools
+  - Quick Choices
+    - Add
+      - Fingerprint Programs
+        - Zaznaczamy `ETYKNEW.PRG`
+- Wychodzimy klawiszem 🔙
 
 ## Konfiguracja vscode
 
