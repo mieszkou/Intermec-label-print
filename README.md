@@ -17,10 +17,12 @@ Użytkownik może:
   - wpisać <ilość>*`<cena>` np.: `5*15`- po naciśnięciu klawisza<kbd>Enter </kbd> wydrukuje się 5 szt. etykiet z podaną ceną  (nie trzeba kasować poprzedniej wartośći, można od razy wpisać nową)
   - kolejne naciśnięcia klawisza <kbd>Enter</kbd> po wydrukowaniu etykiety powodują powtórzenie ostatniego wydruku (niezależnie od wcześniejszej ilości po <kbd>Enter</kbd> drukuje się 1 szt.)
 - **Na drukarce**
-  - 🏠 - ustawienia (i wyjście z aplikacji)
+  - 🏠 - ustawienia
   - ⬇️ - "szybka" kalibracja drukarki
   - 🔙 - wyjście z aplikacji
   - 🧻 - wysuw etykiety
+- Ponowne uruchomienie programu
+  - 🏠 -> `Programs` -> `Fingerprint Programs` -> `ETYKNEW.PRG`
 
 ## Prezentacja video
 
