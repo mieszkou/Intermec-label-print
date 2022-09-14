@@ -20,7 +20,7 @@ Użytkownik może:
   - 🏠 - ustawienia (i wyjście z aplikacji)
   - ⬇️ - "szybka" kalibracja drukarki
   - 🔙 - wyjście z aplikacji
-  - 🧻 - wysów etykiety
+  - 🧻 - wysuw etykiety
 
 ## Prezentacja video
 
@@ -73,17 +73,6 @@ Po ponownym uruchomieniu w systemie powinien być widoczny port COM.
 
 W oknie putty wklejamy zawartość pliku [etykieta_35x25.PRG](etykieta_35x25.PRG).
 Jeśli wszystko poszło ok drukark zrestartuje się i po restarcie powinna wczytać aplikację.
-
-Po wgraniu etykiety dodajmy ją jeszcze do menu.
-
-Wychodzimy z aplikacji 🔙 a następnie:
-
-- Tools
-  - Quick Choices
-    - Add
-      - Fingerprint Programs
-        - Zaznaczamy `ETYKNEW.PRG`
-- Wychodzimy klawiszem 🔙
 
 ## Konfiguracja vscode
 
