@@ -12,9 +12,15 @@ Interfejs prezentuje pytanie o cenę która ma być drukowana.
 
 Użytkownik może:
 
-- wpisać cenę np.: `15` - po naciśnięciu klawisza <kbd>Enter </kbd> wydrukuje się etykieta z podaną ceną
-- wpisać <ilość>*`<cena>` np.: `5*15`- po naciśnięciu klawisza<kbd>Enter </kbd> wydrukuje się 5 szt. etykiet z podaną ceną
-- kolejne naciśnięcia klawisza <kbd>Enter</kbd> po wydrukowaniu etykiety powodują powtórzenie wydruku
+- **Na klawiaturze USB**
+  - wpisać cenę np.: `15` - po naciśnięciu klawisza <kbd>Enter </kbd> wydrukuje się etykieta z podaną ceną
+  - wpisać <ilość>*`<cena>` np.: `5*15`- po naciśnięciu klawisza<kbd>Enter </kbd> wydrukuje się 5 szt. etykiet z podaną ceną
+  - kolejne naciśnięcia klawisza <kbd>Enter</kbd> po wydrukowaniu etykiety powodują powtórzenie wydruku
+- **Na drukarce**
+  - 🏠 - ustawienia (i wyjście z aplikacji)
+  - ⬇️ - "szybka" kalibracja drukarki
+  - 🔙 - wyjście z aplikacji
+  - 🧻 - wysów etykiety
 
 ## Prezentacja video
 

@@ -2,7 +2,7 @@ REM : Skrypt wklajmy w putty po połączeniu z drukarką (115200,8,1,none)
 REM : W drukarce wczesniej nalezy włączyc virtualny port COM
 REM :
 
-DELETE1-100000
+NEW
 IMMEDIATE OFF
 
 '
@@ -14,10 +14,10 @@ IMMEDIATE OFF
 014 DISPLAY KEY 4,0
 015 DISPLAY KEY 5,5
 016 
-017 '
+017 ' FORMFEED
 018 ' Deklaracja zmiennych 
-019 '
-020 
+019 CLL
+020 CLEAR
 021 'wartosc do przekazania z klawiatury
 022 A$="15" 
 023 'cena do druku
@@ -46,9 +46,9 @@ IMMEDIATE OFF
 046 OPEN "console:" FOR OUTPUT AS 1
 047 COMSET 9,"","/","","=",1
 048 ON COMSET 9 GOSUB SUBREAD
-049 
+049 CLIP ON
 050 
-051 '
+051 
 052 ' Aktywacja zdarzen dla klawiszy drukarki i obsluga bledów 
 053 '
 054 ON KEY (10) GOSUB SUBHOME
@@ -63,14 +63,14 @@ IMMEDIATE OFF
 063 
 064 'SETSTDIO 9,0
 065 PRINT #1, CHR$(155) + "2J"
-066 FORMFEED
-067 
-068 ' Wylaczenie domyslnego dzialania klawisza wstecz
-069 BREAK 0 OFF
-070 ' Obsługa UTF-8
-071 NASC 8
-072 ' Wlaczenie czujnika dyspensera
-073 LTS& ON
+066 
+067 ' Wylaczenie domyslnego dzialania klawisza wstecz
+068 BREAK 0 OFF
+069 ' Obsługa UTF-8
+070 NASC 8
+071 ' Wlaczenie czujnika dyspensera
+072 LTS& ON
+073 'GOSUB SUBPRINT
 074 
 075 GOSUB SUBSCREEN
 076 
@@ -150,10 +150,10 @@ IMMEDIATE OFF
 150 PRTXT "Stanowisko 1"
 151 
 152 PRINTFEED L%
-153 RETURN
-154 
+153 
+154 RETURN
 155 SUBHOME: 
-156 BEEP
+156 SETUP
 157 RETURN
 158 
 159 
