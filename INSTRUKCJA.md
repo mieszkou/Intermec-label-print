@@ -24,3 +24,6 @@ Użytkownik może:
 - Ponowne uruchomienie programu
   - 🏠 -> `Programs` -> `Fingerprint Programs` -> `ETYKNEW.PRG`
 
+
+
+jo
