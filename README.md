@@ -23,7 +23,7 @@ Użytkownik może:
   - 🧻 - wysuw etykiety
 - Ponowne uruchomienie programu
   - 🏠 -> `Programs` -> `Fingerprint Programs` -> `ETYKNEW.PRG`
-  GGG
+  
 
 ## Prezentacja video
 
@@ -66,6 +66,9 @@ Dalsza konfiguracja:
       - Media Calibration Mode - ustaw `Fast` (tu nie jestem do końca pewien jak to działa)
       - (...)
       - Power Up Action - ustaw `No Action`
+  - Wizards
+    - Calibration
+      - Label Taken Sensor - naciskamy niebieski przycisk na klawiaturze urządzenia, gdy na ekranie pojawi się napis `LTS Sensitivity Level` ustawiamy na `9`.   wykonyjmey test. Po wyświetlaniu komunikatu `Calibration complete.` wciskamy niebieski guzik.
 
 Następnie restartujemy drukarkę.
 

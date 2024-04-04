@@ -23,7 +23,3 @@ Użytkownik może:
   - 🧻 - wysuw etykiety
 - Ponowne uruchomienie programu
   - 🏠 -> `Programs` -> `Fingerprint Programs` -> `ETYKNEW.PRG`
-
-
-
-jo
